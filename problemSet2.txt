@@ -1,0 +1,60 @@
+Problem Set Two
+
+Answered from a Windows perspective (not Unix or Linux).
+
+Q1 Answer:
+	It would print out the current dir, which is problem1.
+
+Q2 Answer:
+	[go to home dir]
+	cd /datasets/activedata
+	for %i in (*) do icacls %i
+
+Q3 Answer:
+	go to home dir (Windows has no equivalent)
+	create a dir named problem_set_1
+	create a text file called submission
+	go to previous dir (home)
+	print the current dir (home)
+
+Q4 Answer:
+	[go to home dir]
+	copy config.txt “C:/”
+	cd /
+	mkdir preferences
+	[go to home dir]
+	cd preferences
+	copy prefs.txt “C:/preferences”
+-- (this next part is not possible in Command Prompt, so I had to use PowerShell) --
+	[go to home dir]
+	compare-object (get-content “./preferences/config.txt”) (get-content “C:/preferences/config.txt”)
+
+Q5 Answer:
+	Might Have Used:
+		move “~/Documents” “./” “datafile.csv” /mov
+	Should Have Used:
+		xcopy “~/Documents/datafile.csv” ./
+
+Q6 Answer:
+	It prints the GitHub cat in ascii art.
+
+Q7 Answer:
+	Installation:
+		pip install delorean
+	Prints Out:
+		It prints the current datetime in the following format: (year, month, day, hour, minute, second, unknown 6-digit number)
+
+Q8 Answer:
+	wget https://finances.worldbank.org/api/views/yu93-ayrw/rows.csv
+
+Q9 Answer:
+	find /c “Total” rows.csv
+	(This prints out the number of lines that have the substring “Total” in them.)
+	
+	OR
+	
+	find /n “Total” rows.csv
+	(This prints all the lines that have the substring “Total” in them, preceded by the line number.)
+
+Q10 Answer:
+	find “Total” rows.csv > distilledExpenditures.csv
